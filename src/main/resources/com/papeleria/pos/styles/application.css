@@ -54,10 +54,49 @@
     -fx-background-radius: 3;
     -fx-padding: 8 15 8 15;
     -fx-cursor: hand;
+    -fx-font-weight: bold;
 }
 
 .btn-primary:hover {
     -fx-background-color: #2980b9;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+.btn-secondary {
+    -fx-background-color: #7f8c8d;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #636e72;
+}
+
+.btn-success {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-background-radius: 3;
+    -fx-padding: 8 15 8 15;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-success:hover {
+    -fx-background-color: #219653;
 }
 
 /* Tables */

@@ -2,6 +2,7 @@ com\papeleria\pos\App.class
 com\papeleria\pos\config\AppConfig.class
 com\papeleria\pos\ui\controller\MainController.class
 com\papeleria\pos\Launcher.class
+com\papeleria\pos\ui\controller\InventoryController$1.class
 com\papeleria\pos\model\SaleReturn.class
 com\papeleria\pos\model\TicketContent$TicketItem.class
 com\papeleria\pos\dao\SaleDao.class
@@ -32,6 +33,7 @@ com\papeleria\pos\ui\controller\ReportsController.class
 com\papeleria\pos\service\ProductService.class
 com\papeleria\pos\dao\InventoryMovementDao.class
 com\papeleria\pos\model\TicketContent.class
+com\papeleria\pos\ui\controller\InventoryController$3.class
 com\papeleria\pos\model\Category.class
 com\papeleria\pos\dao\MigrationRunner.class
 com\papeleria\pos\model\Sale.class
@@ -46,6 +48,7 @@ com\papeleria\pos\util\DateUtil.class
 com\papeleria\pos\ui\controller\SalesHistoryController.class
 com\papeleria\pos\ui\controller\CashController.class
 com\papeleria\pos\model\CashClosureCorrection.class
+com\papeleria\pos\ui\controller\InventoryController$2.class
 com\papeleria\pos\service\ReturnService.class
 com\papeleria\pos\dao\ReturnDao.class
 com\papeleria\pos\dao\AppSettingDao.class

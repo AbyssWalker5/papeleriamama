@@ -52,7 +52,7 @@ public class SaleDao {
             } else {
                 pstmt.setInt(9, 0);
             }
-            pstmt.setString(10, sale.getStatus());
+            pstmt.setString(10, sale.getStatus() != null ? sale.getStatus() : "COMPLETED");
             pstmt.setString(11, sale.getCreatedAt() != null ? DateUtil.toDbString(sale.getCreatedAt()) : DateUtil.toDbString(DateUtil.now()));
             
             pstmt.executeUpdate();

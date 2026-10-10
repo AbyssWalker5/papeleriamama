@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.PosController">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Buscar/Código de barras:" />
+            <TextField fx:id="searchField" HBox.hgrow="ALWAYS" promptText="Ingrese código de barras o nombre del producto..." onAction="#onSearchEnter"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="cartTable" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn text="Producto" fx:id="colProductName" prefWidth="250"/>
+                <TableColumn text="Precio" fx:id="colPrice" prefWidth="100"/>
+                <TableColumn text="Cantidad" fx:id="colQuantity" prefWidth="100"/>
+                <TableColumn text="Subtotal" fx:id="colSubtotal" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+    <right>
+        <VBox spacing="15" BorderPane.alignment="CENTER" prefWidth="250">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Resumen" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <Label text="Subtotal:" />
+                <Label fx:id="subtotalLabel" text="\$0.00" style="-fx-font-weight: bold;"/>
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Total:" />
+                <Label fx:id="totalLabel" text="\$0.00" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: green;"/>
+            </HBox>
+            <Label text="Método de Pago:" />
+            <ComboBox fx:id="paymentMethodComboBox" maxWidth="Infinity"/>
+            
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button text="Confirmar Venta" fx:id="confirmButton" maxWidth="Infinity" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onConfirmSale"/>
+            <Button text="Cancelar Venta" fx:id="cancelButton" maxWidth="Infinity" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold;" onAction="#onCancelSale"/>
+        </VBox>
+    </right>
+</BorderPane>

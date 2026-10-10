@@ -68,7 +68,8 @@ public class ProductDao {
         String sql = "INSERT INTO products (barcode, sku, name, description, category_id, purchase_price_cents, sale_price_cents, stock, min_stock, unit, active, created_at, updated_at) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, product.getBarcode());
+            String barcode = (product.getBarcode() != null && !product.getBarcode().trim().isEmpty()) ? product.getBarcode().trim() : null;
+            stmt.setString(1, barcode);
             stmt.setString(2, product.getSku());
             stmt.setString(3, product.getName());
             stmt.setString(4, product.getDescription());
@@ -81,7 +82,7 @@ public class ProductDao {
             stmt.setInt(7, MoneyUtil.toCents(product.getSalePrice()));
             stmt.setInt(8, product.getStock());
             stmt.setInt(9, product.getMinStock());
-            stmt.setString(10, product.getUnit());
+            stmt.setString(10, product.getUnit() != null ? product.getUnit() : "pieza");
             stmt.setInt(11, product.isActive() ? 1 : 0);
             stmt.setString(12, product.getCreatedAt() != null ? DateUtil.toDbString(product.getCreatedAt()) : DateUtil.toDbString(DateUtil.now()));
             stmt.setString(13, product.getUpdatedAt() != null ? DateUtil.toDbString(product.getUpdatedAt()) : DateUtil.toDbString(DateUtil.now()));
@@ -102,7 +103,8 @@ public class ProductDao {
         String sql = "UPDATE products SET barcode = ?, sku = ?, name = ?, description = ?, category_id = ?, " +
                      "purchase_price_cents = ?, sale_price_cents = ?, stock = ?, min_stock = ?, unit = ?, active = ?, updated_at = ? WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, product.getBarcode());
+            String barcode = (product.getBarcode() != null && !product.getBarcode().trim().isEmpty()) ? product.getBarcode().trim() : null;
+            stmt.setString(1, barcode);
             stmt.setString(2, product.getSku());
             stmt.setString(3, product.getName());
             stmt.setString(4, product.getDescription());
@@ -115,15 +117,57 @@ public class ProductDao {
             stmt.setInt(7, MoneyUtil.toCents(product.getSalePrice()));
             stmt.setInt(8, product.getStock());
             stmt.setInt(9, product.getMinStock());
-            stmt.setString(10, product.getUnit());
+            stmt.setString(10, product.getUnit() != null ? product.getUnit() : "pieza");
             stmt.setInt(11, product.isActive() ? 1 : 0);
-            stmt.setString(12, product.getUpdatedAt() != null ? DateUtil.toDbString(product.getUpdatedAt()) : DateUtil.toDbString(DateUtil.now()));
+            stmt.setString(12, DateUtil.toDbString(DateUtil.now()));
             stmt.setInt(13, product.getId());
             
             stmt.executeUpdate();
         } catch (SQLException e) {
             logger.error("Error updating product: {}", product.getId(), e);
             throw new RuntimeException("Error updating product", e);
+        }
+    }
+
+    public boolean hasHistory(Connection conn, int productId) {
+        String sql = "SELECT 1 FROM sale_items WHERE product_id = ? " +
+                     "UNION ALL SELECT 1 FROM inventory_movements WHERE product_id = ? " +
+                     "UNION ALL SELECT 1 FROM return_items WHERE product_id = ? LIMIT 1";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, productId);
+            stmt.setInt(2, productId);
+            stmt.setInt(3, productId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                return rs.next();
+            }
+        } catch (SQLException e) {
+            logger.error("Error checking history for product ID: {}", productId, e);
+            return true;
+        }
+    }
+
+    public void delete(Connection conn, int id) {
+        String sql = "DELETE FROM products WHERE id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            logger.info("Permanently deleted product ID: {}", id);
+        } catch (SQLException e) {
+            logger.error("Error deleting product ID: {}", id, e);
+            throw new RuntimeException("Error deleting product", e);
+        }
+    }
+
+    public void deactivate(Connection conn, int id) {
+        String sql = "UPDATE products SET active = 0, updated_at = ? WHERE id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, DateUtil.toDbString(DateUtil.now()));
+            stmt.setInt(2, id);
+            stmt.executeUpdate();
+            logger.info("Deactivated product ID: {}", id);
+        } catch (SQLException e) {
+            logger.error("Error deactivating product ID: {}", id, e);
+            throw new RuntimeException("Error deactivating product", e);
         }
     }
 

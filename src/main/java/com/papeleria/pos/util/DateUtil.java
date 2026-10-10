@@ -21,7 +21,19 @@ public final class DateUtil {
 
     public static LocalDateTime fromDbString(String s) {
         if (s == null || s.trim().isEmpty()) return null;
-        return LocalDateTime.parse(s, DB_FORMAT);
+        String clean = s.trim().replace(" ", "T");
+        try {
+            return LocalDateTime.parse(clean);
+        } catch (Exception e) {
+            try {
+                if (clean.length() >= 19) {
+                    return LocalDateTime.parse(clean.substring(0, 19));
+                }
+                return java.time.LocalDate.parse(clean).atStartOfDay();
+            } catch (Exception ex) {
+                return LocalDateTime.now();
+            }
+        }
     }
 
     public static String formatDisplay(LocalDateTime dt) {

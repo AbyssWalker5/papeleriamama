@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="12" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.InventoryController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <!-- Barra de búsqueda y alta -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label text="Buscar:" style="-fx-font-weight: bold; -fx-font-size: 13px;"/>
+        <TextField fx:id="searchField" HBox.hgrow="ALWAYS" promptText="Buscar por nombre, código de barras o SKU..." style="-fx-padding: 8; -fx-font-size: 13px;"/>
+        <Button text="+ Nuevo Producto" onAction="#handleNewProduct" styleClass="btn-primary" style="-fx-font-size: 13px; -fx-padding: 8 16;"/>
+    </HBox>
+
+    <!-- Tabla principal de inventario -->
+    <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="55" style="-fx-alignment: CENTER;"/>
+            <TableColumn fx:id="barcodeColumn" text="Código de Barras" prefWidth="140"/>
+            <TableColumn fx:id="nameColumn" text="Nombre del Producto" prefWidth="270"/>
+            <TableColumn fx:id="purchasePriceColumn" text="P. Compra" prefWidth="105" style="-fx-alignment: CENTER-RIGHT;"/>
+            <TableColumn fx:id="priceColumn" text="P. Venta" prefWidth="105" style="-fx-alignment: CENTER-RIGHT;"/>
+            <TableColumn fx:id="stockColumn" text="Stock" prefWidth="85" style="-fx-alignment: CENTER;"/>
+            <TableColumn fx:id="minStockColumn" text="Mínimo" prefWidth="80" style="-fx-alignment: CENTER;"/>
+            <TableColumn fx:id="unitColumn" text="Unidad" prefWidth="80" style="-fx-alignment: CENTER;"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- Barra inferior con resumen y acciones -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label fx:id="statusLabel" text="Cargando productos..." style="-fx-text-fill: #7f8c8d; -fx-font-size: 12px;" HBox.hgrow="ALWAYS"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="✏️ Editar Producto" onAction="#handleEditProduct" styleClass="btn-primary" style="-fx-padding: 8 16;"/>
+        <Button text="📦 Ajustar Stock" onAction="#handleAdjustInventory" styleClass="btn-secondary" style="-fx-padding: 8 16;"/>
+        <Button text="🗑️ Eliminar Producto" onAction="#handleDeleteProduct" styleClass="btn-danger" style="-fx-padding: 8 16;"/>
+    </HBox>
+</VBox>

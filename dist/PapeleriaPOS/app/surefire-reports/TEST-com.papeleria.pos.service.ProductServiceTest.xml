@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.papeleria.pos.service.ProductServiceTest" time="1.178" tests="4" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\theab\OneDrive\Documentos\papeleria mama\target\test-classes;C:\Users\theab\OneDrive\Documentos\papeleria mama\target\classes;C:\Users\theab\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\xerial\sqlite-jdbc\3.45.3.0\sqlite-jdbc-3.45.3.0.jar;C:\Users\theab\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\theab\.m2\repository\ch\qos\logback\logback-classic\1.5.6\logback-classic-1.5.6.jar;C:\Users\theab\.m2\repository\ch\qos\logback\logback-core\1.5.6\logback-core-1.5.6.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\pdfbox\3.0.2\pdfbox-3.0.2.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.2\pdfbox-io-3.0.2.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\fontbox\3.0.2\fontbox-3.0.2.jar;C:\Users\theab\.m2\repository\commons-logging\commons-logging\1.3.0\commons-logging-1.3.0.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\theab\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\theab\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\theab\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Mexico_City"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="MX"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
+    <property name="sun.java.command" value="C:\Users\theab\AppData\Local\Temp\surefire12653708667139840243\surefirebooter-20261010000124169_3.jar C:\Users\theab\AppData\Local\Temp\surefire12653708667139840243 2026-10-10T00-01-23_955-jvmRun1 surefire-20261010000124169_1tmp surefire_0-20261010000124169_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\theab\OneDrive\Documentos\papeleria mama\target\test-classes;C:\Users\theab\OneDrive\Documentos\papeleria mama\target\classes;C:\Users\theab\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-controls\21.0.2\javafx-controls-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-fxml\21.0.2\javafx-fxml-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-graphics\21.0.2\javafx-graphics-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2.jar;C:\Users\theab\.m2\repository\org\openjfx\javafx-base\21.0.2\javafx-base-21.0.2-win.jar;C:\Users\theab\.m2\repository\org\xerial\sqlite-jdbc\3.45.3.0\sqlite-jdbc-3.45.3.0.jar;C:\Users\theab\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\theab\.m2\repository\ch\qos\logback\logback-classic\1.5.6\logback-classic-1.5.6.jar;C:\Users\theab\.m2\repository\ch\qos\logback\logback-core\1.5.6\logback-core-1.5.6.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\pdfbox\3.0.2\pdfbox-3.0.2.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.2\pdfbox-io-3.0.2.jar;C:\Users\theab\.m2\repository\org\apache\pdfbox\fontbox\3.0.2\fontbox-3.0.2.jar;C:\Users\theab\.m2\repository\commons-logging\commons-logging\1.3.0\commons-logging-1.3.0.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\theab\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\theab\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\theab\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\theab\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\theab\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\theab"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-25"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\theab\OneDrive\Documentos\papeleria mama"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\theab\AppData\Local\Temp\surefire12653708667139840243\surefirebooter-20261010000124169_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.1+8-LTS-27"/>
+    <property name="user.name" value="theab"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\theab\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\theab\AppData\Local\Temp\"/>
+    <property name="java.version" value="25.0.1"/>
+    <property name="user.dir" value="C:\Users\theab\OneDrive\Documentos\papeleria mama"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-25\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\theab\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\theab\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Program Files\CMake\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\mingw64\bin;C:\Program Files\Git\cmd;C:\Program Files\mingw-w64\bin;C:\Program Files\nodejs\;C:\Users\theab\AppData\Local\agy\bin;C:\Users\theab\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\theab\AppData\Local\Programs\Python\Python313\;C:\Users\theab\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\theab\AppData\Local\Programs\Python\Python39\;C:\Users\theab\AppData\Local\Microsoft\WindowsApps;C:\Users\theab\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\theab\.dotnet\tools;C:\Program Files\JetBrains\IntelliJ IDEA 2025.2.4\bin;C:\Program Files\mingw-w64\bin;C:\Users\theab\AppData\Roaming\npm;C:\Maven\apache-maven-3.10.0\bin;c:\Users\theab\.vscode\extensions\vscjava.vscode-java-debug-0.59.0\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.0.1+8-LTS-27"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="pos.db.path" value="C:\Users\theab\AppData\Local\Temp\pos_test_prod_1472664176272308616.db"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testDeleteProductWithSalesHistoryIsDeactivated" classname="com.papeleria.pos.service.ProductServiceTest" time="0.243">
+    <system-out><![CDATA[2026-10-10 00:01:25.298 [main] INFO  c.papeleria.pos.dao.DatabaseManager - Initializing database...
+2026-10-10 00:01:25.450 [main] DEBUG c.papeleria.pos.dao.DatabaseManager - PRAGMA journal_mode=WAL result: true
+2026-10-10 00:01:25.472 [main] DEBUG c.papeleria.pos.dao.DatabaseManager - PRAGMA foreign_keys=ON result: false
+2026-10-10 00:01:25.473 [main] DEBUG c.papeleria.pos.dao.DatabaseManager - PRAGMA busy_timeout=5000 result: true
+2026-10-10 00:01:25.476 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Checking for database migrations...
+2026-10-10 00:01:25.479 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Fresh database detected.
+2026-10-10 00:01:25.480 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Current schema version: 0
+2026-10-10 00:01:25.481 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Applying migration: V1__initial_schema.sql (version 1)
+2026-10-10 00:01:25.507 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Successfully applied migration: V1__initial_schema.sql
+2026-10-10 00:01:25.508 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Applying migration: V2__seed_initial_catalog.sql (version 2)
+2026-10-10 00:01:25.516 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Successfully applied migration: V2__seed_initial_catalog.sql
+2026-10-10 00:01:25.516 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Applying migration: V3__renumber_products.sql (version 3)
+2026-10-10 00:01:25.523 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Successfully applied migration: V3__renumber_products.sql
+2026-10-10 00:01:25.524 [main] INFO  c.papeleria.pos.dao.MigrationRunner - Migrations completed.
+2026-10-10 00:01:25.667 [main] INFO  c.p.pos.service.ProductService - Created new product with barcode: 750444444444
+2026-10-10 00:01:25.674 [main] INFO  c.papeleria.pos.service.CashService - Opening cash session with initial fund: 100.00
+2026-10-10 00:01:25.690 [main] INFO  c.papeleria.pos.service.CashService - Cash session opened successfully.
+2026-10-10 00:01:25.736 [main] INFO  c.papeleria.pos.service.SaleService - Successfully completed sale: SALE-PROD-DEL
+2026-10-10 00:01:25.752 [main] INFO  com.papeleria.pos.dao.ProductDao - Deactivated product ID: 13
+2026-10-10 00:01:25.753 [main] INFO  c.p.pos.service.ProductService - Product ID: 13 has history; deactivated safely
+]]></system-out>
+  </testcase>
+  <testcase name="testDeleteProductWithoutHistoryIsPermanent" classname="com.papeleria.pos.service.ProductServiceTest" time="0.109">
+    <system-out><![CDATA[2026-10-10 00:01:25.866 [main] INFO  c.p.pos.service.ProductService - Created new product with barcode: 750333333333
+2026-10-10 00:01:25.885 [main] INFO  com.papeleria.pos.dao.ProductDao - Permanently deleted product ID: 14
+2026-10-10 00:01:25.886 [main] INFO  c.p.pos.service.ProductService - Permanently deleted product ID: 14
+]]></system-out>
+  </testcase>
+  <testcase name="testCreateAndEditProduct" classname="com.papeleria.pos.service.ProductServiceTest" time="0.112">
+    <system-out><![CDATA[2026-10-10 00:01:25.928 [main] INFO  c.p.pos.service.ProductService - Created new product with barcode: 750100000001
+2026-10-10 00:01:25.959 [main] INFO  c.p.pos.service.ProductService - Updated product ID: 15
+]]></system-out>
+  </testcase>
+  <testcase name="testUpdateRejectsDuplicateBarcode" classname="com.papeleria.pos.service.ProductServiceTest" time="0.116">
+    <system-out><![CDATA[2026-10-10 00:01:26.077 [main] INFO  c.p.pos.service.ProductService - Created new product with barcode: 750111111111
+2026-10-10 00:01:26.112 [main] INFO  c.p.pos.service.ProductService - Created new product with barcode: 750222222222
+]]></system-out>
+  </testcase>
+</testsuite>

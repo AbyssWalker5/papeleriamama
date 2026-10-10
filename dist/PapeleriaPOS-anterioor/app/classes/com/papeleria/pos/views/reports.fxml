@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.ReportsController">
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Reportes y Estadísticas" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="20" vgap="20">
+        <columnConstraints>
+            <ColumnConstraints minWidth="200" prefWidth="250" hgrow="SOMETIMES"/>
+            <ColumnConstraints minWidth="200" prefWidth="250" hgrow="SOMETIMES"/>
+            <ColumnConstraints minWidth="200" prefWidth="250" hgrow="SOMETIMES"/>
+        </columnConstraints>
+
+        <VBox styleClass="card" GridPane.columnIndex="0" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Valor Estimado de Inventario" style="-fx-text-fill: #666; -fx-font-size: 14px;"/>
+            <Label fx:id="lblTotalInventoryValue" text="\$0.00" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1976d2;">
+                <VBox.margin>
+                    <Insets top="10"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+
+        <VBox styleClass="card" GridPane.columnIndex="1" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Catálogo de Productos" style="-fx-text-fill: #666; -fx-font-size: 14px;"/>
+            <Label fx:id="lblTotalProductsCount" text="0 productos" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #388e3c;">
+                <VBox.margin>
+                    <Insets top="10"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+
+        <VBox styleClass="card" GridPane.columnIndex="2" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-background-radius: 8;">
+            <Label text="Ventas del Mes en Curso" style="-fx-text-fill: #666; -fx-font-size: 14px;"/>
+            <Label fx:id="lblMonthlySales" text="\$0.00" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #e64a19;">
+                <VBox.margin>
+                    <Insets top="10"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </GridPane>
+
+    <Separator/>
+
+    <Label text="Exportación de Datos" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <HBox spacing="15">
+        <Button text="Exportar Catálogo de Inventario a CSV" onAction="#handleExportProductsCsv" style="-fx-base: #2e7d32; -fx-text-fill: white; -fx-padding: 10 20; -fx-font-size: 14px;"/>
+        <Button text="Exportar Historial de Ventas a CSV" onAction="#handleExportSalesCsv" style="-fx-base: #1565c0; -fx-text-fill: white; -fx-padding: 10 20; -fx-font-size: 14px;"/>
+    </HBox>
+</VBox>
+
