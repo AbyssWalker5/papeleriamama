@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@../styles/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.MainController">
+   <left>
+      <VBox prefWidth="250.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Papelería POS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDashboard" text="Dashboard" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handlePOS" text="Punto de Venta" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleInventario" text="Inventario" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleHistorial" text="Historial" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleCaja" text="Caja" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleReportes" text="Reportes" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleConfig" text="Configuración" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

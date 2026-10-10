@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.InventoryController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Buscar:"/>
+        <TextField fx:id="searchField" HBox.hgrow="ALWAYS" promptText="Código de barras o nombre..."/>
+        <Button text="Nuevo Producto" onAction="#handleNewProduct"/>
+    </HBox>
+
+    <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="barcodeColumn" text="Código de Barras" prefWidth="150"/>
+            <TableColumn fx:id="nameColumn" text="Nombre" prefWidth="250"/>
+            <TableColumn fx:id="stockColumn" text="Stock" prefWidth="100"/>
+            <TableColumn fx:id="priceColumn" text="Precio" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Editar" onAction="#handleEditProduct"/>
+        <Button text="Ajustar Inventario" onAction="#handleAdjustInventory"/>
+    </HBox>
+</VBox>

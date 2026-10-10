@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.SalesHistoryController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Historial de Ventas" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Actualizar" onAction="#handleRefresh"/>
+        <Button text="Procesar Devolución" onAction="#handleReturn" style="-fx-base: #ff9800; -fx-text-fill: white; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <SplitPane orientation="VERTICAL" VBox.vgrow="ALWAYS" dividerPositions="0.6">
+        <VBox spacing="5">
+            <Label text="Ventas Realizadas:" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="salesTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colSaleNumber" text="Folio" prefWidth="150"/>
+                    <TableColumn fx:id="colDate" text="Fecha/Hora" prefWidth="180"/>
+                    <TableColumn fx:id="colPayment" text="Método" prefWidth="120"/>
+                    <TableColumn fx:id="colTotal" text="Total" prefWidth="120"/>
+                    <TableColumn fx:id="colStatus" text="Estado" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="5">
+            <Label text="Detalle de Productos de la Venta:" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="itemsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colItemProduct" text="Producto" prefWidth="250"/>
+                    <TableColumn fx:id="colItemQty" text="Cantidad" prefWidth="100"/>
+                    <TableColumn fx:id="colItemPrice" text="Precio Unitario" prefWidth="120"/>
+                    <TableColumn fx:id="colItemSubtotal" text="Subtotal" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </SplitPane>
+</VBox>
+

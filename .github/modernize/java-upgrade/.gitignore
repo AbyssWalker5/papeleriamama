@@ -1,0 +1,16 @@
+# Maven y Java
+target/
+*.class
+
+# Aplicación empaquetada
+dist/
+dist-nueva/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

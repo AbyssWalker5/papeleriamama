@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.papeleria.pos.ui.controller.CashController">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <Label text="Estado de Caja:" style="-fx-font-weight: bold;"/>
+        <Label fx:id="statusLabel" text="CERRADA" style="-fx-text-fill: red;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnOpenCash" text="Abrir Caja" onAction="#onOpenCash"/>
+        <Button fx:id="btnCashIn" text="Registrar Entrada" onAction="#onCashIn"/>
+        <Button fx:id="btnCashOut" text="Registrar Salida" onAction="#onCashOut"/>
+        <Button fx:id="btnCloseCash" text="Corte de Caja" onAction="#onCloseCash"/>
+    </HBox>
+
+    <TableView fx:id="movementsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="Fecha" fx:id="colDate" prefWidth="150"/>
+            <TableColumn text="Tipo" fx:id="colType" prefWidth="100"/>
+            <TableColumn text="Monto" fx:id="colAmount" prefWidth="100"/>
+            <TableColumn text="Descripción" fx:id="colDescription" prefWidth="250"/>
+        </columns>
+    </TableView>
+</VBox>
